@@ -1,0 +1,29 @@
+# Core
+fastapi>=0.115.0
+uvicorn>=0.30.0
+python-multipart>=0.0.9
+
+# Image Processing
+Pillow>=10.4.0
+opencv-python-headless>=4.10.0
+numpy>=1.26.4
+
+# Detection (PaddleOCR)
+paddlepaddle
+paddleocr
+
+# Recognition (TrOCR)
+transformers<5.0.0
+torch>=2.6.0
+torchvision>=0.21.0
+sentencepiece>=0.2.0
+tiktoken>=0.13.0
+protobuf>=4.0.0
+
+# Evaluation
+jiwer>=3.0.4
+
+# New OCR Architecture
+google-genai
+tenacity
+python-dotenv

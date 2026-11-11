@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+
+# Large model files
+*.gguf
+*.bin
+*.zip
+*.whl
+trocr-large-handwritten/
+
+# Executables & DLLs (llama.cpp binaries, etc.)
+*.exe
+*.dll
+*.pyd
+
+# llama.cpp directories
+llama-avx2/
+llama-cpu/
+
+# Temp & cache
+temp/
+pip_cache/
+ollama_models/
+debug_output/
+debug_crops/
+dist/
+*.log
+matching_cache.sqlite
+.ocr_cache_*
+
+# Test/debug scripts (root level)
+check_*.py
+test_*.py
+inspect_*.py
+parse_eval.py
+print_full_eval.py
+evaluation_run_output.json
+
+# AI-service debug/test/experiment files
+ai-service/check_*.py
+ai-service/test_*.py
+ai-service/debug_*.py
+ai-service/debug_*.json
+ai-service/experiment.py
+ai-service/experiment_results.md
+ai-service/benchmark_report.md
+ai-service/verify_blueprint.py
+ai-service/run_slope_test.py
+ai-service/download_model.py
+ai-service/dummy.*
+
+# OS
+.DS_Store
+Thumbs.db

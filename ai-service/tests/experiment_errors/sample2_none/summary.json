@@ -1,0 +1,9 @@
+{
+  "filename": "sample2.jpg",
+  "mode": "none",
+  "ground_truth": "The quick brown fox",
+  "ocr_output": "The quick brown fox .",
+  "cer": 0.10526315789473684,
+  "wer": 0.25,
+  "avg_confidence": 0.9165050288041433
+}

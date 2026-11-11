@@ -1,0 +1,9 @@
+{
+  "filename": "sample1.jpg",
+  "mode": "morphological",
+  "ground_truth": "Hello World",
+  "ocr_output": "Hello World .",
+  "cer": 0.18181818181818182,
+  "wer": 0.5,
+  "avg_confidence": 0.8609592378139496
+}

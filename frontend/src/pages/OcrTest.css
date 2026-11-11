@@ -1,0 +1,510 @@
+/* =================================================================
+   OcrTest — page styles
+   Dark glassmorphism theme with purple-blue accent gradients
+   ================================================================= */
+
+/* ---- Page Layout ---- */
+.ocr-page {
+  min-height: 100vh;
+  background: #0a0e1a;
+  color: #e4e6f0;
+}
+
+/* ---- Header ---- */
+.ocr-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(108, 92, 231, 0.12),
+    rgba(162, 155, 254, 0.06)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  font-size: 2.2rem;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Main Container ---- */
+.ocr-main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ================================================================= */
+/* Upload Section                                                     */
+/* ================================================================= */
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.drop-zone {
+  border: 2px dashed rgba(108, 92, 231, 0.35);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.drop-zone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(
+    circle at center,
+    rgba(108, 92, 231, 0.06),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.drop-zone:hover::before,
+.drop-zone.drag-active::before {
+  opacity: 1;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-active {
+  border-color: #6c5ce7;
+  background: rgba(108, 92, 231, 0.08);
+  box-shadow: 0 0 40px rgba(108, 92, 231, 0.12);
+}
+
+.drop-zone.has-image {
+  padding: 1rem;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.drop-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.drop-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.drop-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ---- Buttons ---- */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(108, 92, 231, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(108, 92, 231, 0.45);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.07);
+  color: #e4e6f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #00b894, #00cec9);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(0, 184, 148, 0.3);
+}
+
+.btn-accent:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 184, 148, 0.45);
+}
+
+/* ---- Spinner ---- */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================================================= */
+/* Error Banner                                                       */
+/* ================================================================= */
+.error-banner {
+  background: rgba(225, 112, 85, 0.12);
+  border: 1px solid rgba(225, 112, 85, 0.3);
+  color: #e17055;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ================================================================= */
+/* Result Card / Evaluate Card (shared glassmorphism base)            */
+/* ================================================================= */
+.results-section,
+.evaluate-section {
+  margin-bottom: 2rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.result-card,
+.evaluate-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.result-card h3,
+.evaluate-card h3,
+.metrics-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ---- Extracted text output ---- */
+.text-output {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1.25rem;
+  border-radius: 10px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.85;
+  white-space: pre-wrap;
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---- Evaluate section ---- */
+.evaluate-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 1rem;
+}
+
+.ground-truth-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  color: #e4e6f0;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.ground-truth-input:focus {
+  border-color: rgba(108, 92, 231, 0.55);
+}
+
+.ground-truth-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.evaluate-card .btn-accent {
+  margin-top: 1rem;
+}
+
+/* ================================================================= */
+/* Metrics                                                            */
+/* ================================================================= */
+.metrics-section {
+  animation: fadeIn 0.4s ease;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #f5f6fa;
+  margin-bottom: 0.75rem;
+}
+
+.metric-value.accent {
+  color: #00b894;
+}
+
+.metric-value.warn {
+  color: #fdcb6e;
+}
+
+.metric-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.metric-fill.confidence {
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+}
+
+.metric-fill.accuracy {
+  background: linear-gradient(90deg, #00b894, #00cec9);
+}
+
+.metric-fill.cer,
+.metric-fill.wer {
+  background: linear-gradient(90deg, #fdcb6e, #e17055);
+}
+
+/* ================================================================= */
+/* Animations                                                         */
+/* ================================================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Scrollbar ---- */
+.text-output::-webkit-scrollbar {
+  width: 6px;
+}
+
+.text-output::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.text-output::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+
+/* ================================================================= */
+/* Responsive                                                         */
+/* ================================================================= */
+@media (max-width: 640px) {
+  .ocr-main {
+    padding: 1rem;
+  }
+
+  .drop-zone {
+    padding: 2rem 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logo h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ================================================================= */
+/* Standard Evaluation Progress Bar                                  */
+/* ================================================================= */
+.standard-progress-box {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.standard-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.standard-progress-text {
+  font-size: 0.92rem;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.standard-progress-spinner {
+  display: inline-block;
+  animation: standardSpin 2s linear infinite;
+}
+
+@keyframes standardSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.standard-progress-pct {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #a855f7;
+  font-variant-numeric: tabular-nums;
+  margin-left: 1rem;
+}
+
+.standard-progress-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.standard-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+  border-radius: 999px;
+  transition: width 0.3s ease-out;
+}

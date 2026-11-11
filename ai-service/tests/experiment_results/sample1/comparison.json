@@ -1,0 +1,27 @@
+{
+  "filename": "sample1.jpg",
+  "engines": {
+    "paddle_trocr": {
+      "cer": 18.18,
+      "wer": 50.0,
+      "added_words": 1,
+      "missing_words": 0,
+      "substituted_words": 0,
+      "processing_time_ms": 33351.99332237244,
+      "api_response_time_ms": null,
+      "token_usage": null,
+      "error": null
+    },
+    "gemma": {
+      "cer": 100.0,
+      "wer": 100.0,
+      "added_words": 0,
+      "missing_words": 2,
+      "substituted_words": 0,
+      "processing_time_ms": 7807.849407196045,
+      "api_response_time_ms": 7807.2874546051025,
+      "token_usage": 1002,
+      "error": null
+    }
+  }
+}
